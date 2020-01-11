@@ -8,6 +8,7 @@
 <body>
 	<p>noi dung</p>
 	<p id="serverResponse"></p>
+	<button onclick="getdulieu()"></button>
 
 	<script type="text/javascript">
 		// const xhr = new XMLHttpRequest();
@@ -23,22 +24,29 @@
 
 	//========== lay json su dung jquery ==============
 	<script type="text/javascript">
-		// alert("data");
-		$.ajax({ 
-	    type: 'GET', 
-	    url: 'https://bai01hocweb.000webhostapp.com/getnhietdo.php',  
-	    data: "{}",
-	    dataType: 'json',
-	    success: function (data) { 
-	        $.each(data, function(index, element) {
-	        	alert(element);
-	            $('body').append($('<div>', {
-	                text: element.name
-	            }));
-	        });
-	    }
-		});
+		function getdulieu(){
+			$(document).ready(function(){
+				alert("data");
+				$.ajax({ 
+			    type: 'GET', 
+			    url: 'https://bai01hocweb.000webhostapp.com/getnhietdo.php',  
+			    data: "{}",
+			    dataType: 'json',
+			    success: function (data) { 
+			        $.each(data, function(index, element) {
+			        	alert(element);
+			            $('body').append($('<div>', {
+			                text: element.name
+			            }));
+			        });
+			    }
+				});
+			});
+		}
 	</script>
+
+
+	
 
 </body>
 </html>
