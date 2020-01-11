@@ -11,6 +11,7 @@
 	<button onclick="getdulieu()"></button>
 
 	<script type="text/javascript">
+		alert("data");
 		// const xhr = new XMLHttpRequest();
 		// xhr.onload = function(){
 		// 	const serverResponse = document.getElementById("serverResponse");
@@ -25,6 +26,7 @@
 	//========== lay json su dung jquery ==============
 	<script type="text/javascript">
 		function getdulieu(){
+			alert("btn");
 			$(document).ready(function(){
 				alert("data");
 				$.ajax({ 
@@ -33,6 +35,7 @@
 			    data: "{}",
 			    dataType: 'json',
 			    success: function (data) { 
+			    	alert(data);
 			        $.each(data, function(index, element) {
 			        	alert(element);
 			            $('body').append($('<div>', {
